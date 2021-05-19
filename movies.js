@@ -1,5 +1,5 @@
 // Read movies in database
-fetch('https://beneficial-calm-rat.glitch.me/movies.', patchOptions).then(getMovies);
+fetch('https://beneficial-calm-rat.glitch.me/movies', patchOptions).then(getMovies);
 
 let readOptions = {
     method: 'GET',
@@ -10,20 +10,20 @@ let readOptions = {
 
 $("#displayMovies").click(() => {
     let inputVal = $("#id-to-display").val();
-    fetch(`https://beneficial-calm-rat.glitch.me/movies.${inputVal}`, readOptions)
+    fetch(`https://beneficial-calm-rat.glitch.me/movies${inputVal}`, readOptions)
         .then(getMovies);
 });
 
 // Add movie to database
 $("#addmovie").click(() => {
-    fetch('https://beneficial-calm-rat.glitch.me/movies.', postOptions)
+    fetch('https://beneficial-calm-rat.glitch.me/movies', postOptions)
         .then(getMovies);
-    fetch('https://beneficial-calm-rat.glitch.me/movies.')
+    fetch('https://beneficial-calm-rat.glitch.me/movies')
         .then(resp => resp.json())
         .then(movies => {
             for (let movie of movies) {
                 if (movie.title !== newMovie.title) {
-                    fetch('https://beneficial-calm-rat.glitch.me/movies.', postOptions)
+                    fetch('https://beneficial-calm-rat.glitch.me/movies', postOptions)
                         .then(getMovies);
                 } else {
                     alert("That Movies is already in the database!");
