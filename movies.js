@@ -84,3 +84,4 @@ $("#searchMovie").click(() => {
         .then(getMovies);
 })
 
+
