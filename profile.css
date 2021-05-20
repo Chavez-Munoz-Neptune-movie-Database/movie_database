@@ -1,0 +1,99 @@
+
+body {
+    background: #212121;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #AAA;
+    opacity: 0;
+    animation: fade-in 500ms ease 200ms 1 forwards;
+
+}
+
+body h1 {
+    color: #fff;
+    font-size: 50px;
+}
+
+body a {
+    padding: 5px 15px;
+    color: #AAA;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #AAA;
+    transition: all 300ms ease;
+}
+
+body a:hover {
+    color: #ebecec;
+    border: 1px solid #ebecec;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.logo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: red;
+    font-size: 40px;
+    text-align: center;
+}
+
+.wrapper {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.profile {
+    width: 150px;
+}
+
+.profile-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.profile-icon {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #212121;
+    transition: all 300ms ease;
+}
+
+.profile-name {
+    margin: 20px 0;
+    line-height: 1.25em;
+    transition: all 300ms ease;
+}
+
+.profile:hover .profile-icon {
+    border: 6px solid #ebecec;
+}
+
+.profile:hover .profile-name {
+    color: #ebecec;
+}
+
+@media screen and (max-width: 800px) {
+    header .logo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
