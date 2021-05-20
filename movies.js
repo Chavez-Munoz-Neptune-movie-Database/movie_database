@@ -2,7 +2,7 @@
 $(window).ready(function(){
     setTimeout(function() {
         $('.preloader').fadeOut();
-    }, 3000);
+    }, 2000);
 });
 
 // Read movies in database
