@@ -2,7 +2,7 @@
 $(window).ready(function () {
     setTimeout(function () {
         $('.preloader').fadeOut();
-    }, 2000);
+    }, 1000);
 });
 
 // Read movies in database
@@ -23,8 +23,6 @@ $("#displayMovies").click(() => {
 
 // Add movie to database
 $("#addmovie").click(() => {
-    fetch('https://beneficial-calm-rat.glitch.me/movies', postOptions)
-        .then(getMovies);
     fetch('https://beneficial-calm-rat.glitch.me/movies')
         .then(resp => resp.json())
         .then(movies => {
@@ -41,21 +39,9 @@ $("#addmovie").click(() => {
 });
 
 // Delete Movie from database
-fetch('https://beneficial-calm-rat.glitch.me/movies.', patchOptions).then(getMovies);
-
-let deleteOptions = {
-    method: 'DELETE',
-    headers: {
-        'Content-Type': 'application/json',
-    }
-};
-
-$("#deleteMovie").click(() => {
-    let inputVal = $("#id-to-delete").val();
-    fetch(`https://beneficial-calm-rat.glitch.me/movies.${inputVal}`, deleteOptions)
-        .then(getMovies);
+$("#deleteMovie").click(function ()  {
+    fetch(`https://beneficial-calm-rat.glitch.me/movies.${movie.id}`, deleteOptions).then(getMovies);
 });
-
 
 // Update Movie in database
 fetch('https://beneficial-calm-rat.glitch.me/movies.', patchOptions).then(getMovies);
