@@ -1,3 +1,10 @@
+// Jquery Page preloader
+$(window).ready(function(){
+    setTimeout(function() {
+        $('.preloader').fadeOut();
+    }, 3000);
+});
+
 // Read movies in database
 fetch('https://beneficial-calm-rat.glitch.me/movies', patchOptions).then(getMovies);
 
