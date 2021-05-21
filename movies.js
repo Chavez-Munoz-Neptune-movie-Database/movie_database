@@ -17,7 +17,7 @@ let readOptions = {
 
 $("#displayMovies").click(() => {
     let inputVal = $("#id-to-display").val();
-    fetch(`https://beneficial-calm-rat.glitch.me/movies${inputVal}`, readOptions)
+    fetch(`https://beneficial-calm-rat.glitch.me/movies${movie.id}`, readOptions)
         .then(getMovies);
 });
 
@@ -53,28 +53,12 @@ let updateOptions = {
     }
 };
 
-$("#updateMovies").click(() => {
+$("#updateMovie").click(() => {
     let inputVal = $("#id-to-update").val();
-    fetch(`https://beneficial-calm-rat.glitch.me/movies.${inputVal}`, updateOptions)
+    fetch(`https://beneficial-calm-rat.glitch.me/movies.${movie.id}`, updateOptions)
         .then(getMovies);
 });
 
-
-// View specific Movie
-fetch('https://beneficial-calm-rat.glitch.me/movies.', patchOptions).then(getMovies);
-
-let viewMovie = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json',
-    }
-};
-
-$("#searchMovie").click(() => {
-    let inputVal = $("#id-to-existing").val();
-    fetch(`https://beneficial-calm-rat.glitch.me/movies.${inputVal}`, viewMovie)
-        .then(getMovies);
-})
 
 
 // ===HERE STAR THE PAGE CODE===//
